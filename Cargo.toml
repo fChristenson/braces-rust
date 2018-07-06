@@ -1,0 +1,7 @@
+[package]
+name = "braces-rust"
+version = "0.1.0"
+authors = ["Fredrik <fredrik.christenson@gmail.com>"]
+
+[dependencies]
+regex = "1"
