@@ -7,7 +7,9 @@ const OPENING_BRACES: [&str; 3] = ["(", "{", "["];
 
 fn main() {
   println!("Braces, input braces string!");
+
   let stdin = io::stdin();
+
   for line in stdin.lock().lines() {
     match line {
       Ok(line) => {
@@ -40,6 +42,7 @@ fn all_braces_match(braces_string: &str) -> bool {
     } else {
       let poped_brace = opening_braces_stack.pop().unwrap_or("");
       let do_not_match = !is_closing_brace_of(&poped_brace, &brace);
+
       if do_not_match {
         return false;
       }
@@ -53,5 +56,6 @@ fn is_closing_brace_of(opening_brace: &str, closing_brace: &str) -> bool {
   let is_match_1 = opening_brace == "(" && closing_brace == ")";
   let is_match_2 = opening_brace == "[" && closing_brace == "]";
   let is_match_3 = opening_brace == "{" && closing_brace == "}";
+
   is_match_1 || is_match_2 || is_match_3
 }
