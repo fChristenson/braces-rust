@@ -14,6 +14,7 @@ fn main() {
     match line {
       Ok(line) => {
         let regex = Regex::new(r"[\{\[\(\}\]\)]+").unwrap();
+
         if regex.is_match(&line) {
           println!("All braces match: {}", all_braces_match(&line))
         } else {
